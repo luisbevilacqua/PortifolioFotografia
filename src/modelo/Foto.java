@@ -12,7 +12,16 @@ public class Foto {
     private String caminho;
     private String descricao;
     private int idFotografo;
+    private String nomeFotografo;
     private ArrayList<String> tags;
+
+    public String getNomeFotografo() {
+        return nomeFotografo;
+    }
+
+    public void setNomeFotografo(String nomeFotografo) {
+        this.nomeFotografo = nomeFotografo;
+    }
 
     public int getIdFoto() {
         return idFoto;

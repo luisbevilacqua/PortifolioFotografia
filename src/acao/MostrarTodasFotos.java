@@ -24,7 +24,17 @@ public class MostrarTodasFotos implements Acao{
         fotos = bd.getFotos();
 
         for (Foto foto : fotos) {
-            listaFotos += foto.getTitulo() + "<br><img src=\"" + foto.getCaminho() + "\"><br>";
+            listaFotos +=" <div class=\"col-md-6 portfolio-item\">\n" +
+                    "        <a href=\"#\">\n" +
+                    "            <img class=\"img-responsive\" src=\"" + foto.getCaminho() + "\"alt=\"\">" +
+                    "        </a>\n" +
+                    "        <h3>\n" +
+                    "            <a href=\"#\">"+ foto.getTitulo() +"" +
+                    "               <small>" + foto.getNomeFotografo() + "</small>" +
+                    "           </a>\n" +
+                    "        </h3>\n" +
+                    "        <p>" + foto.getDescricao() + "</p>\n" +
+                    "    </div>";
         }
 
         request.setAttribute("listaFotos", listaFotos);

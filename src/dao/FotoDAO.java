@@ -22,9 +22,9 @@ public class FotoDAO {
     public List<Foto> getFotos() {
         List<Foto> fotos = new ArrayList<>();
 
-        PreparedStatement stmt;
+        PreparedStatement stmt, stmt2;
         try {
-            stmt = connection.prepareStatement("select * from foto");
+            stmt = connection.prepareStatement("select * from foto, fotografo WHERE foto.idFotografo = fotografo.idFotografo");
 
             ResultSet rs = stmt.executeQuery();
 
@@ -33,9 +33,18 @@ public class FotoDAO {
                 foto.setIdFoto(rs.getInt("idFoto"));
                 foto.setTitulo(rs.getString("titulo"));
                 foto.setCaminho(rs.getString("caminho"));
-                foto.setDescricao(rs.getString("descricao"));
+                foto.setDescricao(rs.getString("foto.descricao"));
                 foto.setIdFoto(rs.getInt("idFotografo"));
+                foto.setNomeFotografo(rs.getString("nome"));
 
+                stmt2 = connection.prepareStatement("SELECT tag FROM tags WHERE idFoto = ?");
+                stmt2.setInt(1, rs.getInt("idFoto"));
+                ResultSet rs2 = stmt2.executeQuery();
+                ArrayList<String> tags = new ArrayList<>();
+                while (rs2.next()){
+                    tags.add(rs.getString("tag"));
+                }
+                foto.setTags(tags);
                 fotos.add(foto);
             }
             rs.close();
