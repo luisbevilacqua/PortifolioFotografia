@@ -24,9 +24,9 @@ public class MostrarTodasFotos implements Acao{
         fotos = bd.getFotos();
 
         for (Foto foto : fotos) {
-            listaFotos +=" <div class=\"col-md-6 portfolio-item\">\n" +
+            listaFotos +=" <div class=\"col-md-6 col-lg-3 portfolio-item\">\n" +
                     "        <a href=\"#\">\n" +
-                    "            <img class=\"img-responsive\" src=\"" + foto.getCaminho() + "\"alt=\"\">" +
+                    "            <img class=\"img-responsive\" src=\"" + foto.getCaminho() + "\"alt=\"\" height=\"400\">" +
                     "        </a>\n" +
                     "        <h3>\n" +
                     "            <a href=\"#\">"+ foto.getTitulo() +"" +
@@ -38,7 +38,7 @@ public class MostrarTodasFotos implements Acao{
         }
 
         request.setAttribute("listaFotos", listaFotos);
-        RequestDispatcher rd = request.getRequestDispatcher("/albums.jsp");
-        rd.forward(request, response);
+        RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+        //rd.forward(request, response);
     }
 }
