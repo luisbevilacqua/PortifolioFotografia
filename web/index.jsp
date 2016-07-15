@@ -14,5 +14,9 @@
         <a href="sobre.jsp">Sobre</a>
         <a href="albums.jsp">Albums</a>
         <a href="contato.jsp">Contato</a>
+        <form action="controller" method="post">
+            <input type="submit" value="Mostrar todas fotos">
+            <input type="hidden" name="opcao" value="MostrarTodasFotos">
+        </form>
     </body>
 </html>
