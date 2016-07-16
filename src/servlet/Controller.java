@@ -29,11 +29,6 @@ public class Controller extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Acao acao = new MostrarTodasFotos();
-        try {
-            acao.executa(request,response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
 }

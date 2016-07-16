@@ -26,7 +26,7 @@ public class MostrarTodasFotos implements Acao{
         for (Foto foto : fotos) {
             listaFotos +=" <div class=\"col-md-6 col-lg-3 portfolio-item\">\n" +
                     "        <a href=\"#\">\n" +
-                    "            <img class=\"img-responsive\" src=\"" + foto.getCaminho() + "\"alt=\"\" height=\"400\">" +
+                    "            <img class=\"img-responsive\" src=\"/resources/" + foto.getCaminho() + "\"alt=\"\" height=\"400\">" +
                     "        </a>\n" +
                     "        <h3>\n" +
                     "            <a href=\"#\">"+ foto.getTitulo() +"" +

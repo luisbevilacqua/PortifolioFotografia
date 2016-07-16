@@ -30,10 +30,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="controller" name="opcao">About</a>
+                    <a href="index.jsp">Fotos</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a href="sobre.jsp">Sobre</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
