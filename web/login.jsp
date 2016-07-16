@@ -1,13 +1,15 @@
-<%@ page import="acao.MostrarTodasFotos" %>
-<%@ page import="acao.Acao" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: luis
   Date: 15/07/16
-  Time: 11:40
+  Time: 11:41
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
+    <title>Title</title>
+</head>
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -36,7 +38,7 @@
                     <a href="sobre.jsp">Sobre</a>
                 </li>
                 <li>
-                    <a href="login.jsp">Login</a>
+                    <a href="#">Login</a>
                 </li>
             </ul>
             <div class="col-sm-3 col-md-3 pull-right">
@@ -68,14 +70,9 @@
             </h1>
         </div>
     </div>
-<% Acao acao = new MostrarTodasFotos();
-    try {
-        acao.executa(request,response);
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-%>
-${requestScope.listaFotos}
+    Login: <input type="text"><br>
+    Senha: <input type="password"><br>
+    <input type="submit" value="Login">
 
 </div>
 

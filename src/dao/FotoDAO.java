@@ -91,4 +91,7 @@ public class FotoDAO {
         }
         return fotos;
     }
+    public void adiconarFoto(Foto foto){
+
+    }
 }
