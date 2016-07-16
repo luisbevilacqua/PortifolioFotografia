@@ -1,4 +1,6 @@
-<%--
+<%@ page import="acao.MostrarTodasFotos" %>
+<%@ page import="acao.Acao" %>
+<%@ page import="acao.MostrarInformacoesFotografo" %><%--
   Created by IntelliJ IDEA.
   User: luis
   Date: 15/07/16
@@ -35,7 +37,7 @@
                     <a href="sobre.jsp">Sobre</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Contacto</a>
                 </li>
             </ul>
         </div>
@@ -44,8 +46,28 @@
     <!-- /.container -->
 </nav>
 
-<div class="container">
+<hr>
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Sobre
+                <small>Secondary Text</small>
+            </h1>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <% Acao acao = new MostrarInformacoesFotografo();
+                try {
+                    acao.executa(request,response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            %>
+            ${requestScope.infos}
+        </div>
+    </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
