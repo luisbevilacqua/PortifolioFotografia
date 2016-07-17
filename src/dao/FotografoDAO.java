@@ -44,4 +44,22 @@ public class FotografoDAO {
 
         return fotografo;
     }
+
+    public boolean logar(String login, String senha){
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM fotografo WHERE login = ? AND senha = ?");
+
+            stmt.setString(1, login);
+            stmt.setString(2, senha);
+
+            ResultSet rs = stmt.executeQuery();
+
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
 }

@@ -70,9 +70,12 @@
             </h1>
         </div>
     </div>
-    Login: <input type="text"><br>
-    Senha: <input type="password"><br>
-    <input type="submit" value="Login">
+    <form action="controller" method="post">
+        Login: <input type="text" name="login"><br>
+        Senha: <input type="password" name="senha"><br>
+        <input type="submit" value="Login">
+        <input type="hidden" name="opcao" value="Logar">
+    </form>
 
 </div>
 
