@@ -16,7 +16,7 @@ public class MostrarFotosPorTag implements Acao{
     public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
         List<Foto> fotos;
         String listaFotos = "";
-
+        String descricao = "";
         // obtem parametros do request
         String tag = request.getParameter("srch-term");
 
@@ -24,7 +24,12 @@ public class MostrarFotosPorTag implements Acao{
         fotos = bd.getFotosByTag(tag);
 
         for (Foto foto : fotos) {
-            listaFotos +=" <div class=\"col-md-6 col-lg-3 portfolio-item\">\n" +
+            if(foto.getDescricao() != null){
+                descricao = foto.getDescricao();
+            }else{
+                descricao= "<br>";
+            }
+            listaFotos +=" <div class=\"col-md-6 col-lg-8 portfolio-item\">\n" +
                     "        <a href=\"#\">\n" +
                     "            <img class=\"img-responsive\" src=\"/resources/" + foto.getCaminho() + "\"alt=\"\" height=\"400\">" +
                     "        </a>\n" +
@@ -33,11 +38,14 @@ public class MostrarFotosPorTag implements Acao{
                     "               <small>" + foto.getNomeFotografo() + "</small>" +
                     "           </a>\n" +
                     "        </h3>\n" +
-                    "        <p>" + foto.getDescricao() + "</p>\n" +
+                    "        <p>" + descricao + "</p>\n" +
                     "    </div>";
         }
+        String init = "" + tag.charAt(0);
+        tag = init.toUpperCase() + tag.substring(1);
 
         request.setAttribute("listaFotos", listaFotos);
+        request.setAttribute("nomeTag", tag);
         RequestDispatcher rd = request.getRequestDispatcher("/busca.jsp");
         rd.forward(request, response);
     }
