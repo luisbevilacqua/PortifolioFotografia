@@ -1,5 +1,6 @@
 <%@ page import="acao.MostrarTodasFotos" %>
-<%@ page import="acao.Acao" %><%--
+<%@ page import="acao.Acao" %>
+<%@ page import="acao.MostrarInformacoesFotografo" %><%--
   Created by IntelliJ IDEA.
   User: luis
   Date: 15/07/16
@@ -11,9 +12,18 @@
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
+<% Acao acao = new MostrarTodasFotos();
+    Acao acao2 = new MostrarInformacoesFotografo();
+    try {
+        acao.executa(request,response);
+        acao2.executa(request,response);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+%>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -24,7 +34,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">${requestScope.nomeFotografo}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -63,18 +73,12 @@
     <!-- Page Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Page Heading
-                <small>Secondary Text</small>
+            <h1 class="page-header">${requestScope.nomeTag}
+                <small>Todas as fotos de autoria de ${requestScope.nomeFotografo}</small>
             </h1>
         </div>
     </div>
-<% Acao acao = new MostrarTodasFotos();
-    try {
-        acao.executa(request,response);
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-%>
+
 ${requestScope.listaFotos}
 
 </div>

@@ -5,6 +5,8 @@
   Time: 11:41
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="acao.Acao" %>
+<%@ page import="acao.MostrarInformacoesFotografo" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,6 +18,13 @@
     <title>Title</title>
 </head>
 <body>
+<% Acao acao = new MostrarInformacoesFotografo();
+    try {
+        acao.executa(request,response);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+%>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">${requestScope.nomeFotografo}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,8 +74,8 @@
     <!-- Page Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Page Heading
-                <small>Secondary Text</small>
+            <h1 class="page-header">Login
+
             </h1>
         </div>
     </div>
