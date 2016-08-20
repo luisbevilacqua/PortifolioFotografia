@@ -12,7 +12,7 @@ public class ConexaoBD {
         try {
             String url = "jdbc:mysql://localhost/portfolioDB";
             Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection(url, "root", "");
+            return DriverManager.getConnection(url, "root", "root");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

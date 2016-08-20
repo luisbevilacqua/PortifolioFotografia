@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="#">Adicionar foto</a><br>
+    <a href="adicionar.jsp">Adicionar foto</a><br>
     <a href="#">Remover foto</a><br>
     <a href="#">Editar foto</a><br>
 </body>

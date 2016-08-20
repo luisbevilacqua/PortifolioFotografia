@@ -92,6 +92,17 @@ public class FotoDAO {
         return fotos;
     }
     public void adiconarFoto(Foto foto){
+        PreparedStatement stmt;
+        try{
+            stmt = connection.prepareStatement("INSERT INTO foto (titulo, caminho, descricao, idFotografo) VALUES (?,?,?,1)");
+            stmt.setString(1, foto.getTitulo());
+            stmt.setString(2, foto.getCaminho());
+            stmt.setString(3, foto.getDescricao());
 
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
