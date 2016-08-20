@@ -12,11 +12,11 @@
 </head>
 <body>
 <form action="controller" method="post">
-    Titulo: <input type="text" name="titulo"><br>
-    Caminho: <input type="text" name="caminho"><br>
-    Descrição: <input type="text" name="descricao"><br>
-    <input type="submit" value="Adicionar">
-    <input type="hidden" name="opcao" value="Adicionar">
+Titulo: <input type="text" name="titulo"><br>
+Caminho: <input type="text" name="caminho"><br>
+Descrição: <input type="text" name="descricao"><br>
+<input type="submit" value="Adicionar">
+<input type="hidden" name="opcao" value="Adicionar">
 </form>
 </body>
 </html>

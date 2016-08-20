@@ -105,4 +105,19 @@ public class FotoDAO {
             e.printStackTrace();
         }
     }
+    public void editarFoto(Foto foto){
+        PreparedStatement stmt;
+        try{
+            stmt = connection.prepareStatement("UPDATE foto SET titulo = ?, caminho = ?, descricao = ? WHERE idFoto = ?");
+            stmt.setString(1, foto.getTitulo());
+            stmt.setString(2, foto.getCaminho());
+            stmt.setString(3, foto.getDescricao());
+            stmt.setInt(4,foto.getIdFoto());
+
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
