@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: luis
-  Date: 17/07/16
-  Time: 20:40
+  Date: 20/08/16
+  Time: 13:56
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,8 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="adicionar.jsp">Adicionar foto</a><br>
-    <a href="deletar.jsp">Remover foto</a><br>
-    <a href="editar.jsp">Editar foto</a><br>
+<body>
+<form action="controller" method="post">
+    Id: <input type="text" name="id"><br>
+    <input type="submit" value="Deletar">
+    <input type="hidden" name="opcao" value="Deletar">
+</form>
 </body>
 </html>

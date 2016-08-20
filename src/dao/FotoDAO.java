@@ -120,4 +120,16 @@ public class FotoDAO {
             e.printStackTrace();
         }
     }
+    public void deletarFoto(Foto foto){
+        PreparedStatement stmt;
+        try{
+            stmt = connection.prepareStatement("DELETE FROM foto WHERE idFoto = ?");
+            stmt.setInt(1,foto.getIdFoto());
+
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
