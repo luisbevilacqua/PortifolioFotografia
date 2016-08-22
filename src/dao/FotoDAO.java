@@ -34,7 +34,7 @@ public class FotoDAO {
                 foto.setTitulo(rs.getString("titulo"));
                 foto.setCaminho(rs.getString("caminho"));
                 foto.setDescricao(rs.getString("foto.descricao"));
-                foto.setIdFoto(rs.getInt("idFotografo"));
+                foto.setIdFotografo(rs.getInt("idFotografo"));
                 foto.setNomeFotografo(rs.getString("nome"));
 
                 stmt2 = connection.prepareStatement("SELECT tags FROM tag WHERE idFoto = ?");
@@ -109,11 +109,10 @@ public class FotoDAO {
     public void editarFoto(Foto foto){
         PreparedStatement stmt;
         try{
-            stmt = connection.prepareStatement("UPDATE foto SET titulo = ?, caminho = ?, descricao = ? WHERE idFoto = ?");
+            stmt = connection.prepareStatement("UPDATE foto SET titulo = ?, descricao = ? WHERE idFoto = ?");
             stmt.setString(1, foto.getTitulo());
-            stmt.setString(2, foto.getCaminho());
-            stmt.setString(3, foto.getDescricao());
-            stmt.setInt(4,foto.getIdFoto());
+            stmt.setString(2, foto.getDescricao());
+            stmt.setInt(3,foto.getIdFoto());
 
             stmt.executeUpdate();
             stmt.close();

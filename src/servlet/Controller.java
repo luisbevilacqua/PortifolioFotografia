@@ -4,6 +4,7 @@ import acao.Acao;
 import acao.MostrarTodasFotos;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import java.io.IOException;
  * Created by luis on 15/07/16.
  */
 @WebServlet("/controller")
+@MultipartConfig
 public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String opcao = request.getParameter("opcao");

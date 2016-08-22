@@ -20,8 +20,9 @@ public class Editar implements Acao {
 
         Foto foto = new Foto();
         foto.setIdFoto(Integer.parseInt(id));
-        foto.setTitulo(titulo);
-        foto.setCaminho(caminho);
+        if(titulo != "")
+            foto.setTitulo(titulo);
+        //foto.setCaminho(caminho);
         foto.setDescricao(descricao);
         FotoDAO bd = new FotoDAO();
 

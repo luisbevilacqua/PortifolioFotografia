@@ -14,7 +14,7 @@ public class Deletar implements Acao {
     @Override
     public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String id = request.getParameter("id");
-
+        System.out.println("id >>> "+ id);
         Foto foto = new Foto();
         foto.setIdFoto(Integer.parseInt(id));
         FotoDAO bd = new FotoDAO();
