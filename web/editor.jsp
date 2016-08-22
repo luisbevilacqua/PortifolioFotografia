@@ -13,9 +13,12 @@
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="css/lightbox.min.css"  rel="stylesheet" type="text/css">
     <title>Administrador</title>
+
 </head>
 <body>
+
 <% Acao acao = new MostrarTodasAsFotosAdm();
     Acao acao2 = new MostrarInformacoesFotografo();
     try {
@@ -46,9 +49,6 @@
                 </li>
 
                 <li>
-                    <a href="editar.jsp">Editar Foto</a>
-                </li>
-                <li>
                     <a href="index.jsp">Log out</a>
                 </li>
             </ul>
@@ -72,11 +72,9 @@
     </div>
 
     ${requestScope.listaFotos}
-
 </div>
 <script src="js/lightbox-plus-jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 </body>
 </html>

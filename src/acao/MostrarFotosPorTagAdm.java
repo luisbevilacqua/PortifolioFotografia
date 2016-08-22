@@ -12,15 +12,18 @@ import java.util.List;
 /**
  * Created by luis on 15/07/16.
  */
-public class MostrarTodasAsFotosAdm implements Acao{
+public class MostrarFotosPorTagAdm implements Acao{
     @Override
     public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
         List<Foto> fotos;
         String listaFotos = "";
         String descricao;
         // obtem parametros do request
-        int contador = 1;
+        String tag = request.getParameter("srch-term");
         FotoDAO bd = new FotoDAO();
+        fotos = bd.getFotosByTag(tag);
+        String nomeFotografo = "Yasmin Fontes";
+        int contador = 1;
         fotos = bd.getFotos();
         ArrayList<String> tags;
         for (Foto foto : fotos) {
@@ -58,7 +61,7 @@ public class MostrarTodasAsFotosAdm implements Acao{
                             "     <input type=\"hidden\"  name=\"id\" value=\""+ foto.getIdFoto() +"\">\n" +
                             "    <input type=\"hidden\" name=\"opcao\" value=\"Deletar\">\n" +
                             "</form>"+
-                    "   <a href=\"editar.jsp?id="+foto.getIdFoto()+"\" > <button style=\"display:inline-block;\" class=\"btn btn-warning\" type=\"submit\" value=\"alterar\">Alterar</button></a>" +"</div>";
+                            "   <a href=\"editar.jsp?id="+foto.getIdFoto()+"\" > <button style=\"display:inline-block;\" class=\"btn btn-warning\" type=\"submit\" value=\"alterar\">Alterar</button></a>" +"</div>";
         }
 
         request.setAttribute("nomeTag", "Todos");

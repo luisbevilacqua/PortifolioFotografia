@@ -47,9 +47,6 @@
                 </li>
 
                 <li>
-                    <a href="editar.jsp">Editar Foto</a>
-                </li>
-                <li>
                     <a href="index.jsp">Log out</a>
                 </li>
             </ul>
@@ -72,13 +69,18 @@
     </div>
 <form action="controller" method="post">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <% String id = request.getParameter("id");%>
 
-    Id: <input type="text" name="id"><br>
-    Titulo: <input type="text" name="titulo"><br>
-    Descrição: <input type="text" name="descricao"><br>
-    <input type="submit" value="Editar">
-    <input type="hidden" name="opcao" value="Editar">
-        </div>
+        <input type="hidden" name="id" value="<%=id%>"><br>
+        <label for="titulo">Título :</label>
+        <input id="titulo" class="form-control" placeholder="Título" required="" autofocus="" type="text" name="titulo"  x-moz-errormessage="Por favor, informe o titulo">
+
+        <label for="descricao" >Descrição:</label>
+        <input id="descricao" class="form-control" placeholder="Descrição" required="" autofocus="" type="text" name="descricao">
+
+        <input type="submit" value="Editar">
+        <input type="hidden" name="opcao" value="Editar">
+    </div>
 </form>
     </div>
 </body>

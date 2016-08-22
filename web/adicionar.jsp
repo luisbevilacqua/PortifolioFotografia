@@ -46,9 +46,6 @@
                 </li>
 
                 <li>
-                    <a href="editar.jsp">Editar Foto</a>
-                </li>
-                <li>
                     <a href="index.jsp">Log out</a>
                 </li>
             </ul>
@@ -71,7 +68,7 @@
 
 <form action="controller" method="post" enctype="multipart/form-data">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <label for="titulo" ">Título :</label>
+        <label for="titulo">Título :</label>
         <input id="titulo" class="form-control" placeholder="Título" required="" autofocus="" type="text" name="titulo"  x-moz-errormessage="Por favor, informe o titulo">
         <input type="file" name="caminho"><br>
         <label for="descricao" >Descrição:</label>

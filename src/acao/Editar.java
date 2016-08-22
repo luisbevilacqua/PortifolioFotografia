@@ -27,7 +27,7 @@ public class Editar implements Acao {
         FotoDAO bd = new FotoDAO();
 
         bd.editarFoto(foto);
-        request.setAttribute("msg","Foto adicionada com sucesso!");
+        request.setAttribute("msg","Foto alterada com sucesso!");
         RequestDispatcher rd = request.getRequestDispatcher("/erro.jsp");
         rd.forward(request, response);
     }
