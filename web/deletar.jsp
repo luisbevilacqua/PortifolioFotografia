@@ -11,7 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<body>
 <form action="controller" method="post">
     Id: <input type="text" name="id"><br>
     <input type="submit" value="Deletar">

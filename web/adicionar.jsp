@@ -11,9 +11,9 @@
     <title>$Title$</title>
 </head>
 <body>
-<form action="controller" method="post">
+<form action="controller" method="post" enctype="multipart/form-data">
 Titulo: <input type="text" name="titulo"><br>
-Caminho: <input type="text" name="caminho"><br>
+Caminho: <input type="file" name="caminho"><br>
 Descrição: <input type="text" name="descricao"><br>
 <input type="submit" value="Adicionar">
 <input type="hidden" name="opcao" value="Adicionar">
