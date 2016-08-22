@@ -12,7 +12,9 @@
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="css/lightbox.min.css"  rel="stylesheet" type="text/css">
     <title>Home</title>
+
 </head>
 <body>
 <% Acao acao = new MostrarTodasFotos();
@@ -40,10 +42,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="index.jsp">Fotos</a>
-                </li>
-                <li>
-                    <a href="sobre.jsp">Sobre</a>
+                    <a href="sobre.jsp">Contato</a>
                 </li>
                 <li>
                     <a href="login.jsp">Login</a>
@@ -82,7 +81,7 @@
 ${requestScope.listaFotos}
 
 </div>
-
+<script src="js/lightbox-plus-jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>

@@ -14,6 +14,7 @@ public class Logar implements Acao{
     public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
+        System.out.println("login: "+ login +" senha: "+senha);
 
         FotografoDAO bd = new FotografoDAO();
 

@@ -1,4 +1,7 @@
-<%--
+<%@ page import="acao.MostrarInformacoesFotografo" %>
+<%@ page import="acao.MostrarTodasFotos" %>
+<%@ page import="acao.Acao" %>
+<%@ page import="acao.MostrarInformacoesFotografo" %><%--
   Created by IntelliJ IDEA.
   User: luis
   Date: 16/07/16
@@ -10,9 +13,10 @@
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <title>Title</title>
+    <title>Busca</title>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,16 +27,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.jsp">${requestScope.nomeFotografo}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+
                 <li>
-                    <a href="index.jsp">Fotos</a>
-                </li>
-                <li>
-                    <a href="sobre.jsp">Sobre</a>
+                    <a href="sobre.jsp">Contato</a>
                 </li>
                 <li>
                     <a href="login.jsp">Login</a>

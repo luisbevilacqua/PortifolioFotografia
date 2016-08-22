@@ -10,12 +10,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title>Title</title>
+    <style>
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+        button{
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 <% Acao acao = new MostrarInformacoesFotografo();
@@ -35,32 +48,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">${requestScope.nomeFotografo}</a>
+            <a class="navbar-brand" href="index.jsp">${requestScope.nomeFotografo}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+
                 <li>
-                    <a href="index.jsp">Fotos</a>
-                </li>
-                <li>
-                    <a href="sobre.jsp">Sobre</a>
+                    <a href="sobre.jsp">Contato</a>
                 </li>
                 <li>
                     <a href="#">Login</a>
                 </li>
             </ul>
-            <div class="col-sm-3 col-md-3 pull-right">
-                <form class="navbar-form" action="controller" method="post">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Buscar por tags" name="srch-term">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                            <input type="hidden" name="opcao" value="MostrarFotosPorTag">
-                        </div>
-                    </div>
-                </form>
-            </div>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -79,12 +80,23 @@
             </h1>
         </div>
     </div>
-    <form action="controller" method="post">
-        Login: <input type="text" name="login"><br>
-        Senha: <input type="password" name="senha"><br>
-        <input type="submit" value="Login">
-        <input type="hidden" name="opcao" value="Logar">
+
+
+    <form action="controller" method="post" class="form-signin">
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+            <label for="login" class="sr-only" >Login</label>
+            <input id="login" class="form-control" placeholder="Login" required="" autofocus="" type="text" name="login"  x-moz-errormessage="Por favor, informe o login">
+            <label for="senha" class="sr-only" >Senha</label>
+            <input id="senha" class="form-control" placeholder="Senha" required="" type="password" name="senha" x-moz-errormessage="Por favor, informe a senha">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="opcao" value="Logar">Login</button>
+        </div>
     </form>
+
+
+
 
 </div>
 

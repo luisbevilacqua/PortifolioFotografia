@@ -86,6 +86,7 @@ public class FotoDAO {
             }
             rs.close();
             stmt.close();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

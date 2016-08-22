@@ -12,7 +12,7 @@
 <head>
     <link rel="stylesheet" type="text/css"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <title>Sobre</title>
+    <title>Contato</title>
 </head>
 <body>
 <% Acao acao = new MostrarInformacoesFotografo();
@@ -32,16 +32,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">${requestScope.nomeFotografo}</a>
+            <a class="navbar-brand" href="index.jsp">${requestScope.nomeFotografo}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+
                 <li>
-                    <a href="index.jsp" name="opcao">Fotos</a>
-                </li>
-                <li>
-                    <a href="sobre.jsp">Sobre</a>
+                    <a href="sobre.jsp">Contato</a>
                 </li>
                 <li>
                     <a href="login.jsp">Login</a>
@@ -58,7 +56,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Sobre
+            <h1 class="page-header">Informações:
             </h1>
         </div>
     </div>

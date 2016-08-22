@@ -18,7 +18,7 @@ public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String opcao = request.getParameter("opcao");
         String nomeDaClasse = "acao." + opcao;
-
+        System.out.println("CLASSE >>> "+nomeDaClasse);
         try {
             Class<?> classe = Class.forName(nomeDaClasse);
             Acao acao = (Acao) classe.newInstance();

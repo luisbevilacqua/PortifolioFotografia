@@ -17,20 +17,21 @@ public class MostrarTodasFotos implements Acao{
     public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
         List<Foto> fotos;
         String listaFotos = "";
-        String descricao=" ";
+        String descricao;
         // obtem parametros do request
 
         FotoDAO bd = new FotoDAO();
         fotos = bd.getFotos();
-
+        ArrayList<String> tags;
         for (Foto foto : fotos) {
             if(foto.getDescricao() != null){
                 descricao = foto.getDescricao();
             }else{
                 descricao="<br>";
             }
+            tags = foto.getTags();
             listaFotos +=" <div class=\"col-md-6 col-lg-6 portfolio-item\">\n" +
-                    "        <a href=\"#\">\n" +
+                    "        <a href=\"/resources/"+foto.getCaminho()+"\"  data-lightbox=\"example-set\"  data-title=\""+descricao+"\">\n" +
                     "            <img class=\"img-responsive\" src=\"/resources/" + foto.getCaminho() + "\"alt=\"\" height=\"400\">" +
                     "        </a>\n" +
                     "        <h3>\n" +
@@ -39,6 +40,19 @@ public class MostrarTodasFotos implements Acao{
                     "           </a>\n" +
                     "        </h3>\n" +
                     "        <p>" + descricao + "</p>\n" +
+                    "        <form  action=\"controller\" method=\"post\">"+
+                    "        <p> Tags: ";
+
+
+
+            for(int i=0; i< tags.size();i++){
+
+                    listaFotos +=  "   <button type=\"submit\" class=\"btn btn-link\" name=\"srch-term\" value=\""+tags.get(i)+"\">"+tags.get(i)+"</button>" ;//"<input type=\"submit\" value=\""+ tags.get(i)+"\">";
+                       ;
+                ;
+            }
+            listaFotos +=
+                    "<input type=\"hidden\" name=\"opcao\" value=\"MostrarFotosPorTag\">"+" </form></p>\n"+
                     "    </div>";
         }
 

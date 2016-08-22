@@ -11,9 +11,11 @@
     <title>$Title$</title>
 </head>
 <body>
+
 <form action="controller" method="post">
 Titulo: <input type="text" name="titulo"><br>
 Caminho: <input type="text" name="caminho"><br>
+    <input type="file" name="Selecione uma Imagem" accept="image/*"> <br>
 Descrição: <input type="text" name="descricao"><br>
 <input type="submit" value="Adicionar">
 <input type="hidden" name="opcao" value="Adicionar">
